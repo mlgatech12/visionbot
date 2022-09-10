@@ -1,0 +1,234 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<section id="hero" class="contact section-bg">
+    <div class="container container-persons-form">
+        <main>
+          
+    <form id="msform" class="row g-3 needs-validation my-form">
+        <h4 class="text-center">Missing Person Information</h4>
+        <ul id="progressbar">
+            <li class="active">Personal</li>
+            <li>Address</li>
+            <li>Pictures</li>
+            <li>Notifications</li>
+        </ul>
+    
+        <fieldset id="1">
+            <hr class="my-3">
+            <h4 class="mb-3 text-center">Personal</h4>
+            <div class="row">
+                <div class="col-md-6 text-start">&nbsp;First Name</div>
+                <div class="col-md-6 text-start">&nbsp;Last Name</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-start">
+                    <input type="text" class="form-control" id="fname" name="fname" placeholder="Jane" required>
+                </div>
+                <div class="col-md-6 text-start">
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Doe" required>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-md-6 text-start">&nbsp;Date of Birth</div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-start">
+                    <input type="date" class="form-control" id="dob" name="dob" placeholder="01/01/2000" required>
+                </div>
+                
+            </div>
+
+            <br />
+
+            <input type="button" name="next" class="w-40 btn btn-primary btn-forms next action-button" value="Next" />
+
+
+        </fieldset>
+
+        <fieldset id="2">
+            <hr class="my-3">
+            <h4 class="mb-3 text-center">Address</h4>
+            <div class="row">
+                <div class="col-md-8 text-start">&nbsp;Street Address</div>
+                <div class="col-md-3 text-start">&nbsp;Apt/Suite</div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 text-start">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main Street" required>
+                </div>
+                <div class="col-md-3 text-start">
+                    <input type="text" class="form-control" id="address2" name="address2" placeholder="Apt 420" required>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-md-6 text-start">&nbsp;State</div>
+                <div class="col-sm-6 text-start">&nbsp;ZipCode</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <select class="form-select" id="state" name="state" required>
+                        <option value="">Choose...</option>
+                        <option>California</option>
+                        <option>Seattle</option>
+                        <option>Nevada</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="zip" name="zip" placeholder="90210" required>
+
+                </div>
+            </div>
+            <br />
+            <input type="button" name="previous" class="w-40 btn btn-primary previous action-button-previous" value="Previous" />
+            <input type="button" name="next" class="w-40 btn btn-primary next action-button" value="Next" />
+
+        </fieldset>
+
+
+        <fieldset id="3">
+            <hr class="my-4">
+
+            <h4 class="mb-3 text-center">Pictures</h4>
+
+            <div class="row">
+                <div class="col-md-8 text-start">&nbsp;Upload Pictures</div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 text-start">
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+            </div>
+
+            <br />
+            <input type="button" name="previous" class="w-40 btn btn-primary btn-lg previous action-button-previous" value="Previous" />
+            <input type="button" name="next" class="w-40 btn btn-primary btn-lg next action-button" value="Next" />
+
+        </fieldset>
+
+        <fieldset id="4">
+            <hr class="my-4">
+            <h4 class="mb-3 text-center">Officer Information for Notifications</h4>
+
+            <div class="row">
+                <div class="col-md-3 text-start">&nbsp;Phone</div>
+                <div class="col-md-8 text-start">&nbsp;Email</div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-start">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="999-99-9999" required>
+                </div>
+                <div class="col-md-8 text-start">
+                    <input type="email" class="form-control" id="address2" name="address2" placeholder="jdoe@gmail.com" required>
+                </div>
+            </div>
+            <br />
+            <input type="button" name="previous" class="w-40 btn btn-primary btn-lg previous action-button-previous" value="Previous" />
+            <input type="button" name="next" class="w-40 btn btn-primary btn-lg next action-button" value="Submit" />
+
+
+        </fieldset>
+
+
+
+    </form> 
+            <!-- Debug-->
+            <!-- MultiStep Form -->
+       <!--
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <form id="msform">
+                        
+                        <ul id="progressbar">
+                            <li class="active">Personal Details</li>
+                            <li>Test</li>
+                            <li>Social Profiles</li>
+                            <li>Account Setup</li>
+                        </ul>
+                        
+                        <fieldset id="1">
+                            <hr class="my-3">
+                            <h4 class="mb-3 text-center">Personal</h4>
+                            <div class="row align-items-start">
+                                <div class="form-group col-md-6 ">
+                                    <label for="fname" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name" required>
+                                    <div class="invalid-feedback">
+                                        Please enter valid first name.
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="fname" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" required>
+                                    <div class="invalid-feedback">
+                                        Please enter valid first name.
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row align-items-start">
+                                <div class="form-group col-md-6">
+                                    <label for="dob" class="form-label">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" name="dob" placeholder="01/01/1970" required>
+                                    <div class="invalid-feedback">
+                                        Please enter valid date of birth less than today's date.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br />
+                            
+                                <input type="button" name="next" class="w-40 btn btn-primary next action-button" value="Next" />
+                           
+
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">Personal Details</h2>
+                            <h3 class="fs-subtitle">Tell us something more about you</h3>
+                            <input type="text" name="fname" placeholder="First Name" />
+                            <input type="text" name="lname" placeholder="Last Name" />
+                            <input type="text" name="phone" placeholder="Phone" />
+                            <br />
+                            <br />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">Social Profiles</h2>
+                            <h3 class="fs-subtitle">Your presence on the social network</h3>
+                            <input type="text" name="twitter" placeholder="Twitter" />
+                            <input type="text" name="facebook" placeholder="Facebook" />
+                            <input type="text" name="gplus" placeholder="Google Plus" />
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+                        <fieldset>
+                            <h2 class="fs-title">Create your account</h2>
+                            <h3 class="fs-subtitle">Fill in your credentials</h3>
+                            <input type="text" name="email" placeholder="Email" />
+                            <input type="password" name="pass" placeholder="Password" />
+                            <input type="password" name="cpass" placeholder="Confirm Password" />
+                            <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                        </fieldset>
+                    </form>
+                    
+                </div>
+            </div> 
+            <!-- /.MultiStep Form -->
+
+        </main>
+    </div>
+</section>
+{% endblock %}
+

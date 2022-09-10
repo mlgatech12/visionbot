@@ -1,0 +1,60 @@
+{% extends "header.html" %}
+
+{% block body %}
+<!-- script for configure page -->
+
+<section id="search" class="searchnav section-bg" style="border:0px solid blue;">
+
+    <div class="container container-register-form" style="border:0px solid green;">
+        <form action="login" method="post" class="my-form">
+
+            <h4>Configure Regions</h4>
+            <br>
+
+            <div class="row text-left">
+                <div class="col-12">
+
+                    <div class="input-group mb-3">
+                        <input id="userinput" type="text" class="form-control" placeholder="add a location..." aria-label="Add an item" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <div class="text-center">
+                                <button id="enter" type="button" onclick="addthis()">Add</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12">
+                    <ul id="configurelist" class="list-group">
+                        <li class="list-group-item">https://vision-bucket.s3.us-west-2.amazonaws.com</li>
+                        <li class="list-group-item">https://reginal-bucket.s3.us-west-2.walmart.com</li>
+                        <li class="list-group-item">https://cloud.google.com/hacienda</li>
+                        <li class="list-group-item">https://azure.com/bishopranch</li>
+                        <li class="list-group-item">https://cloud.google.com/blackhawk</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+</section>
+<script>
+    function addthis() {
+    var button = document.getElementById("enter");
+        var input = document.getElementById("userinput");
+        var ul = document.getElementById("configurelist");
+    console.log('test' + input.value);
+    var li = document.createElement("li");
+        li.className = 'list-group-item';
+        li.textContent = input.value;
+        ul.appendChild(li);
+    }
+</script>
+
+
+{% endblock %}
